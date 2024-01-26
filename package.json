@@ -1,7 +1,6 @@
 {
   "name": "falcon-scoreboard",
   "version": "0.1.0",
-  "homepage": "https://tristan-fletcher.github.io/falcon-scoreboard",
   "private": true,
   "dependencies": {
     "@testing-library/jest-dom": "^5.17.0",
