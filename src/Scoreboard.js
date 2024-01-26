@@ -1,82 +1,73 @@
-import React, { useState, useEffect, useRef } from 'react';
-
+import React, { useState, useEffect } from 'react';
+import Score from './Score'; 
 import './Scoreboard.css';
 
 const Scoreboard = () => {
-  const greenScoreRef = useRef();
-  const redScoreRef = useRef();
   const [scoreboard, setScoreboard] = useState({
     greenScore: 0,
     redScore: 0,
+    homeTeamScore: 0,
+    awayTeamScore: 0,
   });
-
-  // Handle Screen resize
-  useEffect(() => {
-    // Resize event listener
-    const handleResize = () => {
-      setFontSize(greenScoreRef);
-      setFontSize(redScoreRef);
-    };
-
-    // Attach event listener
-    window.addEventListener('resize', handleResize);
-
-    // Cleanup function to remove the event listener
-    return () => {
-      window.removeEventListener('resize', handleResize);
-    };
-  }, []); // Execute only on component mount
 
 
   // Load scoreboard from local storage on component mount
   useEffect(() => {
-    const savedScoreboard = JSON.parse(localStorage.getItem('scoreboard'));
+    const savedScoreboard = JSON.parse(localStorage.getItem('scoreboard')) || {
+        greenScore: 0,
+        redScore: 0,
+        homeTeamScore: 0,
+        awayTeamScore: 0,
+      };
     console.log(savedScoreboard)
     if (savedScoreboard) setScoreboard(savedScoreboard);
   }, []);
 
-  const updateScore = (color, amount) => {
+  const updateScore = (scoreName, amount) => {
     setScoreboard(prevScoreboard => {
       const newScore = { 
         ...prevScoreboard,
-        [color]: prevScoreboard[color] + amount 
+        [scoreName]: prevScoreboard[scoreName] + amount 
       };
+      console.log(newScore)
       localStorage.setItem('scoreboard', JSON.stringify(newScore));
       return newScore
     });
   };
 
-  const setFontSize = (scoreRef) => {
-    const scoreboardWidth = scoreRef.current.offsetWidth;
-    const newFontSize = Math.max(0.9 * scoreboardWidth, 40); // Adjust the font size dynamically based on the width
-    scoreRef.current.style.fontSize = `${newFontSize}px`;
-    const controlButtons = scoreRef.current.querySelectorAll('.score-controls button'); // Select both control buttons
-    controlButtons.forEach(button => {
-        button.style.fontSize = `${newFontSize * 0.2}px`; // Adjust button font size based on the score font size
-    });
-  };
-
-  useEffect(() => {
-    setFontSize(greenScoreRef);
-    setFontSize(redScoreRef);
-  }, [scoreboard]);
-
   return (
     <div className="scoreboard-container">
-      <div ref={greenScoreRef} className="score" style={{ backgroundColor: 'green' }}>
-            <p>{scoreboard.greenScore}</p>
-        <div className="score-controls">
-          <button onClick={() => updateScore('greenScore', 1)}>+</button>
-          <button onClick={() => updateScore('greenScore', -1)}>-</button>
+      <Score
+        score={scoreboard.greenScore}
+        scoreName="greenScore"
+        color="green"
+        updateScore={updateScore}
+      />
+      <div className="center-container">
+        <div className="team-scores-container">
+          <Score
+              score={scoreboard.homeTeamScore}
+              scoreName="homeTeamScore"
+              color="purple"
+              updateScore={updateScore}  
+          />
+          <Score
+              score={scoreboard.awayTeamScore}
+              scoreName="awayTeamScore"
+              color="white"
+              updateScore={updateScore}  
+          />
+        </div>
+        <div className="timer-container">
+          timer goes here
         </div>
       </div>
-      <div ref={redScoreRef} className="score" style={{ backgroundColor: 'red' }}>
-            {scoreboard.redScore}
-        <div className="score-controls">
-          <button onClick={() => updateScore('redScore', 1)}>+</button>
-          <button onClick={() => updateScore('redScore', -1)}>-</button>
-        </div>
-      </div>
+      <Score
+        score={scoreboard.redScore}
+        scoreName="redScore"
+        color="red"
+        updateScore={updateScore}
+      />
     </div>
   );
 };

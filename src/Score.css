@@ -1,0 +1,41 @@
+.score {
+  flex: 1; /* Distribute available space equally */
+  display: flex;
+  flex-direction: column;
+  justify-content: center; /* Center the content horizontally */
+  align-items: center; /* Center the content vertically */
+  text-align: center;
+  background-color: lightgray;
+  margin: 10px;
+  border-radius: 10px;
+  color: white; /* Set text color to white */
+}
+
+.score {
+  position: relative; /* Position the controls relative to the score div */
+  overflow: hidden; /* Hide overflowing controls */
+  
+  &:hover {
+    .score-controls {
+      height: 50%; /* Show controls on hover by increasing their height to 50% */
+    }
+  }
+}
+
+.score-controls {
+  display: flex;
+  flex-direction: column;
+  position: absolute; /* Position absolutely within the score div */
+  bottom: 0; /* Align to the bottom of the score div */
+  width: 100%; /* Fill the entire width of the score div */
+  height: 0; /* Initially have zero height */
+  background: rgba(0, 0, 0, 0.5); /* Semi-transparent background */
+  transition: height 0.3s; /* Add smooth transition effect */
+  overflow: hidden; /* Hide overflowing controls */
+}
+
+.score-controls button {
+  flex: 1; /* The buttons fill the available space equally, taking up the lower half */
+  background: rgba(0, 0, 0, 0.5); /* Semi-transparent background */
+  color: white;
+}
