@@ -1,28 +1,10 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import Score from './Score'; 
 import Timer from './Timer'
 import './Scoreboard.css';
 
-const Scoreboard = () => {
-  const [scoreboard, setScoreboard] = useState({
-    greenScore: 0,
-    redScore: 0,
-    homeTeamScore: 0,
-    awayTeamScore: 0,
-  });
-
-
-  // Load scoreboard from local storage on component mount
-  useEffect(() => {
-    const savedScoreboard = JSON.parse(localStorage.getItem('scoreboard')) || {
-        greenScore: 0,
-        redScore: 0,
-        homeTeamScore: 0,
-        awayTeamScore: 0,
-      };
-    console.log(savedScoreboard)
-    if (savedScoreboard) setScoreboard(savedScoreboard);
-  }, []);
+const Scoreboard = ({savedScoreboard, initialTimeRemaining}) => {
+  const [scoreboard, setScoreboard] = useState(savedScoreboard);
 
   const updateScore = (scoreName, amount) => {
     setScoreboard(prevScoreboard => {
@@ -60,7 +42,9 @@ const Scoreboard = () => {
           />
         </div>
         <div className="timer-container">
-          <Timer/>
+          <Timer 
+            initialTime={initialTimeRemaining}
+          />
         </div>
       </div>
       <Score

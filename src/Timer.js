@@ -1,9 +1,9 @@
 import React, { useState, useEffect, useRef } from "react";
 import './Timer.css';
 
-const Timer = () => {
+const Timer = ({initialTime}) => {
   const [isActive, setIsActive] = useState(false);
-  const [time, setTime] = useState(120); // 2 minutes in seconds
+  const [time, setTime] = useState(initialTime); // 2 minutes in seconds
   const flashingRef = useRef();
   const timerRef = useRef();
   const timerDisplayRef = useRef();
@@ -62,10 +62,15 @@ const Timer = () => {
     const newTime = parseInt(newTimeInput, 10);
     if (!isNaN(newTime) && newTime > 0) {
       setTime(newTime);
+      updateTimeRemaining(newTime)
     } else {
       alert("Please enter a valid positive number for the time.");
     }
   };
+
+  const updateTimeRemaining = (timeRemaining) => {
+    localStorage.setItem('timeRemaining', timeRemaining);
+  }
 
   useEffect(() => {
     let interval;
@@ -73,11 +78,13 @@ const Timer = () => {
       interval = setInterval(() => {
         setTime((prevTime) => {
           const newTime = prevTime - 0.1;
+          updateTimeRemaining(newTime)
           if (newTime <= 0) {
             setIsActive(false); // Pause the timer when it reaches 0
             flashingRef.current.style.display = "block";
             setTimeout(() => {
               setTime(120); // Reset the timer to 2 minutes
+              updateTimeRemaining(120)
               flashingRef.current.style.display = "none"; // hide the mask
             }, 1000); 
             return 0;
@@ -96,7 +103,7 @@ const Timer = () => {
     <div ref={timerRef} onClick={handleTimeClick} className="timer">
      <div ref={flashingRef} className="flashing-mask"></div>
       <p ref={timerDisplayRef} className="timer-display">{formatTime(time)}</p>
-      <p>Press spacebar to start/stop</p>
+      <p>Press spacebar to start/stop. Click time to update manually</p>
     </div>
   );
 };
