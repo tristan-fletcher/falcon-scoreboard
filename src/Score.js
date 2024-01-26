@@ -48,7 +48,6 @@ const Score = ({ score, scoreName, color, updateScore }) => {
 
   return (
     <div ref={scoreRef} className="score" style={{ backgroundColor: color , color: scoreColor, borderWidth: "3px", borderStyle: "solid", borderColor: borderColor, padding: paddingSize}}>
-    {/* <div ref={scoreRef} className="score" style={{ backgroundColor: color , color: scoreColor}}> */}
       <p>{score}</p>
       <div className="score-controls">
         <button onClick={() => updateScore(scoreName, 1)}>+</button>

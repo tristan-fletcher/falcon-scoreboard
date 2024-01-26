@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import Score from './Score'; 
+import Timer from './Timer'
 import './Scoreboard.css';
 
 const Scoreboard = () => {
@@ -59,7 +60,7 @@ const Scoreboard = () => {
           />
         </div>
         <div className="timer-container">
-          timer goes here
+          <Timer/>
         </div>
       </div>
       <Score

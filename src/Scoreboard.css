@@ -26,4 +26,9 @@
 
 .timer-container {
   height: 60%;
+  flex: 1;
+  flex-direction: row;
+  justify-content: center; /* Center the content horizontally */
+  align-items: top; /* Center the content vertically */
+  display: flex;
 }

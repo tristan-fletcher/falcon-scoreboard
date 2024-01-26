@@ -1,0 +1,46 @@
+.timer {
+  flex: 1; /* Distribute available space equally */
+  display: flex;
+  flex-direction: column;
+  justify-content: center; /* Center the content horizontally */
+  align-items: center; /* Center the content vertically */
+  text-align: center;
+  margin: 10px;
+  border-radius: 10px;
+}
+
+.timer {
+  flex: 1; /* Distribute available space equally */
+  display: flex;
+  flex-direction: column;
+  justify-content: center; /* Center the content horizontally */
+  align-items: center; /* Center the content vertically */
+  text-align: center;
+  margin: 10px;
+  border-radius: 10px;
+  width: 100%;
+}
+
+.flashing-mask {
+  height: 100%;
+  width: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-color: purple;
+  z-index: 9999;
+  display: none;
+  animation: flashBackground 0.5s alternate infinite;
+  opacity: 85%;
+}
+
+@keyframes flashBackground {
+  0% { background-color: purple; }
+  50% { background-color: white; }
+  100% { background-color: purple; }
+}
+
+/* Apply the flashing effect class based on state */
+.flashing {
+  display: block;
+}
