@@ -34,8 +34,6 @@ const Score = ({ score, scoreName, color, updateScore }) => {
   }, [score]);
   
   const setFontSize = () => {
-    // Add the setFontSize logic according to your needs
-    // Example: Dynamically adjust the font size based on the width
     const scoreboardWidth = scoreRef.current.offsetWidth;
     const newFontSize = Math.max(0.9 * scoreboardWidth, 40);
     scoreRef.current.style.fontSize = `${newFontSize}px`;
