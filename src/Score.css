@@ -13,25 +13,21 @@
 
 .score {
   position: relative; /* Position the controls relative to the score div */
-  overflow: hidden; /* Hide overflowing controls */
-  
-  &:hover {
-    .score-controls {
-      height: 50%; /* Show controls on hover by increasing their height to 50% */
-    }
-  }
 }
 
 .score-controls {
-  display: flex;
+  display: none;
   flex-direction: column;
   position: absolute; /* Position absolutely within the score div */
   bottom: 0; /* Align to the bottom of the score div */
   width: 100%; /* Fill the entire width of the score div */
-  height: 0; /* Initially have zero height */
+  height: 50%; /* Initially have zero height */
   background: rgba(0, 0, 0, 0.5); /* Semi-transparent background */
   transition: height 0.3s; /* Add smooth transition effect */
-  overflow: hidden; /* Hide overflowing controls */
+}
+
+.score:hover .score-controls {
+  display: flex;
 }
 
 .score-controls button {

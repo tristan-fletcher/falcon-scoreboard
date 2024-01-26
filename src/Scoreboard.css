@@ -31,4 +31,5 @@
   justify-content: center; /* Center the content horizontally */
   align-items: top; /* Center the content vertically */
   display: flex;
+  padding-bottom: 20px;
 }
