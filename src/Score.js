@@ -6,10 +6,10 @@ const Score = ({ score, scoreName, color, updateScore }) => {
   let scoreColor = 'white'
   let paddingSize = "3px"
   let borderColor = "white"
-  if (color === 'white') {
+  if (color === 'gainsboro') {
     scoreColor = 'black'
-    borderColor = "gray"
-    paddingSize = "0px"
+    // borderColor = "gray"
+    // paddingSize = "0px"
   }
 
   // Handle Screen resize

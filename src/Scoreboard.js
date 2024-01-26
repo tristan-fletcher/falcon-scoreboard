@@ -37,7 +37,7 @@ const Scoreboard = ({savedScoreboard, initialTimeRemaining}) => {
           <Score
               score={scoreboard.awayTeamScore}
               scoreName="awayTeamScore"
-              color="white"
+              color="gainsboro"
               updateScore={updateScore}  
           />
         </div>
