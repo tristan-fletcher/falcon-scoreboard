@@ -35,6 +35,10 @@
   transition: height 0.3s; /* Add smooth transition effect */
 }
 
+.score-controls div, button {
+  cursor: pointer;
+}
+
 .score:hover .score-controls {
   display: flex;
 }
