@@ -1,15 +1,15 @@
 {
   "files": {
-    "main.css": "/falcon-scoreboard/static/css/main.99575fb5.css",
-    "main.js": "/falcon-scoreboard/static/js/main.9d47310c.js",
-    "static/js/787.66ed03a1.chunk.js": "/falcon-scoreboard/static/js/787.66ed03a1.chunk.js",
-    "index.html": "/falcon-scoreboard/index.html",
-    "main.99575fb5.css.map": "/falcon-scoreboard/static/css/main.99575fb5.css.map",
-    "main.9d47310c.js.map": "/falcon-scoreboard/static/js/main.9d47310c.js.map",
-    "787.66ed03a1.chunk.js.map": "/falcon-scoreboard/static/js/787.66ed03a1.chunk.js.map"
+    "main.css": "/static/css/main.57cacc47.css",
+    "main.js": "/static/js/main.9801a693.js",
+    "static/js/787.66ed03a1.chunk.js": "/static/js/787.66ed03a1.chunk.js",
+    "index.html": "/index.html",
+    "main.57cacc47.css.map": "/static/css/main.57cacc47.css.map",
+    "main.9801a693.js.map": "/static/js/main.9801a693.js.map",
+    "787.66ed03a1.chunk.js.map": "/static/js/787.66ed03a1.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.99575fb5.css",
-    "static/js/main.9d47310c.js"
+    "static/css/main.57cacc47.css",
+    "static/js/main.9801a693.js"
   ]
 }
