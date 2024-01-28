@@ -9,13 +9,12 @@ function App() {
     awayTeamScore: 0,
   };
   const initialTimeRemaining = localStorage.getItem('timeRemaining') || 120
-  console.log("in app js")
-  console.log(savedScoreboard)
+  console.log("restored scoreboard", savedScoreboard)
   console.log("initial time remaining %d", initialTimeRemaining)
 
   return (
     <div className="App">
-      <Scoreboard savedScoreboard={savedScoreboard} initialTimeRemaining={initialTimeRemaining} /> {/* Include the Scoreboard component here */}
+      <Scoreboard savedScoreboard={savedScoreboard} initialTimeRemaining={initialTimeRemaining}/> {/* Include the Scoreboard component here */}
     </div>
   );
 }

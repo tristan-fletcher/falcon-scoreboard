@@ -9,6 +9,13 @@ const Timer = ({initialTime}) => {
   const flashingRef = useRef();
   const timerRef = useRef();
   const timerDisplayRef = useRef();
+  const circleRef = useRef(null);
+
+  const advancePeriod = () => {
+    if (circleRef.current) {
+      circleRef.current.advanceIndex();
+    }
+  };
 
   const formatTime = (time) => {
     const minutes = Math.floor(time / 60);
@@ -48,6 +55,7 @@ const Timer = ({initialTime}) => {
 
   useEffect(() => {
     let interval;
+    let timeout;
     if (isActive) {
       interval = setInterval(() => {
         setTime((prevTime) => {
@@ -56,9 +64,14 @@ const Timer = ({initialTime}) => {
           if (newTime <= 0) {
             setIsActive(false); // Pause the timer when it reaches 0
             flashingRef.current.style.display = "block";
-            setTimeout(() => {
+            if (timeout) {
+              clearTimeout(timeout)
+            }
+            timeout = setTimeout(() => {
               setTime(120); // Reset the timer to 2 minutes
               updateTimeRemaining(120)
+              console.log("advancing period")
+              advancePeriod()
               flashingRef.current.style.display = "none"; // hide the mask
             }, 1000); 
             return 0;
@@ -82,7 +95,7 @@ const Timer = ({initialTime}) => {
         </AutoTextSize>
       </div>
       <div className="period-container">
-        <CircleIndicator></CircleIndicator>
+        <CircleIndicator ref={circleRef}></CircleIndicator>
       </div>
       <p className="timer-help">Press spacebar to start/stop. Click time to set time. Click period to change it.</p>
     </div>

@@ -1,8 +1,14 @@
-import React, { useState } from 'react';
+import React, { useState, useImperativeHandle, forwardRef } from 'react';
 import './CircleIndicator.css';
 
-const CircleIndicator = () => {
+const CircleIndicator = forwardRef((props, ref) => {
   const [activeIndex, setActiveIndex] = useState(0);
+
+  useImperativeHandle(ref, () => ({
+    advanceIndex() {
+      setActiveIndex((prevIndex) => (prevIndex + 1) % 3);
+    }
+  }));
 
   const handleClick = () => {
     setActiveIndex((prevIndex) => (prevIndex + 1) % 3);
@@ -15,6 +21,6 @@ const CircleIndicator = () => {
       <div className={`circle ${activeIndex >= 2 ? 'solid' : 'hollow'}`}></div>
     </div>
   );
-};
+});
 
 export default CircleIndicator;
