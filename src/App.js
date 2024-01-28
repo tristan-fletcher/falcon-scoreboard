@@ -1,4 +1,5 @@
 import './App.css';
+import Mascot from './Mascot';
 import Scoreboard from './Scoreboard'; // Import the Scoreboard component
 
 function App() {
@@ -15,6 +16,10 @@ function App() {
   return (
     <div className="App">
       <Scoreboard savedScoreboard={savedScoreboard} initialTimeRemaining={initialTimeRemaining}/> {/* Include the Scoreboard component here */}
+      <Mascot position="topleft" />
+      <Mascot position="bottomleft" />
+      <Mascot position="topright"/>
+      <Mascot position="bottomright"/>
     </div>
   );
 }

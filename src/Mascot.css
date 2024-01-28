@@ -1,0 +1,33 @@
+/* Mascot.css */
+
+.mascot {
+  position: fixed;
+  height: auto; /* Maintain aspect ratio */
+  cursor: pointer;
+  border-radius: 10px; /* Rounds the corners. Adjust as necessary */
+  z-index: 500;
+}
+
+.mascot.bottomleft {
+  bottom: 18px; /* Adjust spacing from the bottom as needed */
+  max-width: 250px; /* Force all images to the same width */
+  left: 20px; /* Adjust spacing from the left as needed */
+}
+
+.mascot.bottomright {
+  bottom: 18px; /* Adjust spacing from the bottom as needed */
+  max-width: 250px; /* Force all images to the same width */
+  right: 20px; /* Adjust spacing from the right as needed */
+}
+
+.mascot.topleft {
+  top: 18px; /* Adjust spacing from the bottom as needed */
+  max-width: 100px; /* Force all images to the same width */
+  left: 20px; /* Adjust spacing from the left as needed */
+}
+
+.mascot.topright {
+  top: 18px; /* Adjust spacing from the bottom as needed */
+  max-width: 100px; /* Force all images to the same width */
+  right: 20px; /* Adjust spacing from the right as needed */
+}
