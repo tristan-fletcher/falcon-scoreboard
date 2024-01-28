@@ -32,14 +32,16 @@ const Scoreboard = ({savedScoreboard, initialTimeRemaining}) => {
           <Score
               score={scoreboard.homeTeamScore}
               scoreName="homeTeamScore"
-              color="purple"
-              updateScore={updateScore}  
+              color="green"
+              updateScore={updateScore}
+              invertColor={true}
           />
           <Score
               score={scoreboard.awayTeamScore}
               scoreName="awayTeamScore"
-              color="gray"
-              updateScore={updateScore}  
+              color="red"
+              updateScore={updateScore} 
+              invertColor={true}
           />
         </div>
         <Score
