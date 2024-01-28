@@ -25,7 +25,7 @@
   font-style: italic;
 }
 
-.timer:hover .timer-help{
+.timer:hover .timer-help {
   display: block;
 }
 

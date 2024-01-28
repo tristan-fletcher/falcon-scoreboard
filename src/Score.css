@@ -13,11 +13,11 @@
   overflow: hidden;
 
   /* Gradient overlay */
-  background-image: linear-gradient(
-    135deg, /* Adjust the angle as needed */
-    rgba(250, 250, 250, 0.27) 0%, /* Adjust the starting color and transparency */
-    rgba(255, 255, 255, 0.075) 100% /* Adjust the ending color and transparency */
-  );
+  /* background-image: linear-gradient(
+    135deg,
+    rgba(250, 250, 250, 0.27) 0%, 
+    rgba(255, 255, 255, 0.075) 100%
+  ); */
 }
 
 .score {

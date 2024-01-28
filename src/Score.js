@@ -15,7 +15,7 @@ const Score = ({ score, scoreName, color, updateScore, controlDirection }) => {
 
   return (
     <div ref={scoreRef} className="score" style={{ backgroundColor: color , color: scoreColor, borderWidth: "3px", borderStyle: "solid", borderColor: borderColor, padding: paddingSize, alignItems:"center"}}>
-      <div>
+      <div style={{width: "100%", height:"100%"}}>
         <AutoTextSize maxFontSizePx="500" mode="box" style={{margin: "auto"}}>
          {score}
         </AutoTextSize>
