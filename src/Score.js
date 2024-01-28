@@ -38,12 +38,17 @@ const Score = ({ score, scoreName, color, updateScore, controlDirection, invertC
         </AutoTextSize>
       </div>
       <div className="score-controls" style={{flexDirection: controlDirection}}>
+        <button onClick={() => updateScore(scoreName, 3)}>
+          <AutoTextSize maxFontSizePx="100" mode="oneline" style={{margin: "auto"}}>
+            +3
+          </AutoTextSize>
+        </button>
         <button onClick={() => updateScore(scoreName, 2)}>
           <AutoTextSize maxFontSizePx="100" mode="oneline" style={{margin: "auto"}}>
             +2
           </AutoTextSize>
         </button>
-        <button onClick={() => updateScore(scoreName, -1)}>
+        <button onClick={() => updateScore(scoreName, 1)}>
           <AutoTextSize maxFontSizePx="100" mode="oneline" style={{margin: "auto"}}>
             +1
           </AutoTextSize>
@@ -51,11 +56,6 @@ const Score = ({ score, scoreName, color, updateScore, controlDirection, invertC
         <button onClick={() => updateScore(scoreName, -1)}>
           <AutoTextSize maxFontSizePx="100" mode="oneline" style={{margin: "auto"}}>
             -1
-          </AutoTextSize>
-        </button>
-        <button onClick={() => updateScore(scoreName, -2)}>
-          <AutoTextSize maxFontSizePx="100" mode="oneline" style={{margin: "auto"}}>
-            -2
           </AutoTextSize>
         </button>
       </div>
