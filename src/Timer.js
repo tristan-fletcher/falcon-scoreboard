@@ -21,7 +21,7 @@ const Timer = ({initialTime}) => {
     const minutes = Math.floor(time / 60);
     const seconds = time % 60;
     const secondsWithDecimal = seconds.toFixed(1);
-    return `${minutes.toString().padStart(2, "0")}:${secondsWithDecimal.padStart(4, "0")}`;
+    return `${minutes.toString()}:${secondsWithDecimal.padStart(4, "0")}`;
   };
 
   // Start/Stop Timer Logic
