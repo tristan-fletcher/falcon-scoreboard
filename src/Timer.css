@@ -1,5 +1,5 @@
 .timer {
-  flex: 1; /* Distribute available space equally */
+  flex: 4; 
   display: flex;
   flex-direction: column;
   justify-content: center; /* Center the content horizontally */
@@ -17,6 +17,7 @@
 }
 
 .timer-help {
+  display: flex;
   visibility: hidden;
   font-size: 12px;
   font-style: italic;
@@ -24,6 +25,10 @@
 
 .timer:hover .timer-help{
   visibility: visible;
+}
+
+.period-container {
+  flex: 1;
 }
 
 .flashing-mask {

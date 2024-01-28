@@ -2,7 +2,7 @@
     display: flex;
     justify-content: space-between; /* Distribute items along the main axis */
     align-items: stretch; /* Expand items to fill the vertical space */
-    height: 100vh;
+    height: 50vh;
     padding: 0 20px; /* Add horizontal padding to create space on the sides */
     box-sizing: border-box; /* Ensure padding is included in the total width */
   }
@@ -18,16 +18,13 @@
 
 .team-scores-container {
   flex: 1;
-  flex-direction: row;
   justify-content: center; /* Center the content horizontally */
-  align-items: top; /* Center the content vertically */
+  align-items: stretch; /* Center the content vertically */
   display: flex;
   flex-direction: column;
-  height: 50%;
 }
 
 .timer-container {
-  height: 40%;
   flex: 1;
   flex-direction: row;
   justify-content: center; 

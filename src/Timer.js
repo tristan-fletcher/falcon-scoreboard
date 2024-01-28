@@ -81,8 +81,10 @@ const Timer = ({initialTime}) => {
           {formatTime(time)}
         </AutoTextSize>
       </div>
+      <div className="period-container">
+        <CircleIndicator></CircleIndicator>
+      </div>
       <p className="timer-help">Press spacebar to start/stop. Click time to set time. Click period to change it.</p>
-      <CircleIndicator></CircleIndicator>
     </div>
   );
 };

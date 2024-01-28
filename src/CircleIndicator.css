@@ -1,39 +1,26 @@
 .circle-indicator {
   display: flex;
-  width: 100%;
+  align-items: center;
+  justify-content: space-around;
   cursor: pointer;
 }
 
 .circle {
-  flex-grow: 1;
-  flex-basis: 0;
+  width: 5vw; /* 5% of the viewport width */
+  height: 5vw; /* 5% of the viewport width */
+  max-width: 50px; /* You can set a max size if you wish */
+  max-height: 50px;
+  min-width: 20px; /* And a min size */
+  min-height: 20px;
   border-radius: 50%; /* Round shape */
-  border: 2px solid black;
-  margin: 0 10px; /* Space between circles */
-  position: relative;
+  border: 1vw solid black; /* Border scales with viewport width */
+  margin: 2vw; /* Space between circles also scales */
 }
 
-.circle::before {
-  content: '';
-  display: block;
-  padding-top: 100%; /* Same as width to maintain aspect ratio */
-}
-
-.circle.solid::after, .circle.hollow::after {
-  content: '';
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  width: 90%; /* Relative to parent size */
-  height: 90%; /* Relative to parent size */
-  border-radius: 50%; /* Round shape */
-}
-
-.circle.solid::after {
+.solid {
   background-color: black;
 }
 
-.circle.hollow::after {
+.hollow {
   background-color: white;
 }

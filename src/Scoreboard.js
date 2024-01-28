@@ -19,15 +19,15 @@ const Scoreboard = ({savedScoreboard, initialTimeRemaining}) => {
   };
 
   return (
-    <div className="scoreboard-container">
-      <Score
-        score={scoreboard.greenScore}
-        scoreName="greenScore"
-        color="green"
-        updateScore={updateScore}
-        controlDirection="column"
-      />
-      <div className="center-container">
+    <div style={{height: "100%"}}>
+      <div className="scoreboard-container">
+        <Score
+          score={scoreboard.greenScore}
+          scoreName="greenScore"
+          color="green"
+          updateScore={updateScore}
+          controlDirection="column"
+        />
         <div className="team-scores-container">
           <Score
               score={scoreboard.homeTeamScore}
@@ -42,20 +42,20 @@ const Scoreboard = ({savedScoreboard, initialTimeRemaining}) => {
               updateScore={updateScore}  
           />
         </div>
-        <div className="timer-container">
-          <Timer 
-            initialTime={initialTimeRemaining}
-          />
-        </div>
+        <Score
+          score={scoreboard.redScore}
+          scoreName="redScore"
+          color="red"
+          updateScore={updateScore}
+          controlDirection="column"
+        />
       </div>
-      <Score
-        score={scoreboard.redScore}
-        scoreName="redScore"
-        color="red"
-        updateScore={updateScore}
-        controlDirection="column"
-      />
-    </div>
+          <div className="timer-container">
+            <Timer 
+              initialTime={initialTimeRemaining}
+            />
+          </div>
+      </div>
   );
 };
 
