@@ -9,7 +9,7 @@ const Score = ({ score, scoreName, color, updateScore, controlDirection, invertC
   let borderColor = color
   let backgroundColor = color
   let opacity = "100%"
-  let boxShadow = "3px 3px 5px rgba(0, 0, 0, 0.3)"
+  let boxShadow = "0px 0px 8px rgba(0, 0, 0, 0.3)"
   const colorToRGB = {
     red: '255, 0, 0',
     green: '0, 128, 0',
