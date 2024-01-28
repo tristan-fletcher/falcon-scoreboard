@@ -1,14 +1,16 @@
 .score {
   flex: 1; /* Distribute available space equally */
   display: flex;
-  flex-direction: column;
-  justify-content: center; /* Center the content horizontally */
-  align-items: center; /* Center the content vertically */
+  flex-direction: row;
+  justify-content: center; 
+  align-items: center; 
   text-align: center;
   background-color: lightgray;
   margin: 10px;
   border-radius: 10px;
   color: white; /* Set text color to white */
+  text-overflow: clip;
+  overflow: hidden;
 
   /* Gradient overlay */
   background-image: linear-gradient(
@@ -24,11 +26,11 @@
 
 .score-controls {
   display: none;
-  flex-direction: column;
+  flex-direction: row;
   position: absolute; /* Position absolutely within the score div */
   bottom: 0; /* Align to the bottom of the score div */
   width: 100%; /* Fill the entire width of the score div */
-  height: 50%; /* Initially have zero height */
+  height: 100%; /* Initially have zero height */
   background: rgba(0, 0, 0, 0.5); /* Semi-transparent background */
   transition: height 0.3s; /* Add smooth transition effect */
 }

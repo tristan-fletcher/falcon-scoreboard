@@ -22,14 +22,15 @@
   justify-content: center; /* Center the content horizontally */
   align-items: top; /* Center the content vertically */
   display: flex;
-  height: 40%;
+  flex-direction: column;
+  height: 50%;
 }
 
 .timer-container {
-  height: 60%;
+  height: 40%;
   flex: 1;
   flex-direction: row;
-  justify-content: center; /* Center the content horizontally */
-  align-items: top; /* Center the content vertically */
+  justify-content: center; 
+  align-items: top; 
   display: flex;
 }

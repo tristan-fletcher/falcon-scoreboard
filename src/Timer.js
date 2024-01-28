@@ -1,3 +1,4 @@
+import { AutoTextSize } from "auto-text-size";
 import React, { useState, useEffect, useRef } from "react";
 import './Timer.css';
 
@@ -13,34 +14,6 @@ const Timer = ({initialTime}) => {
     const seconds = time % 60;
     const secondsWithDecimal = seconds.toFixed(1);
     return `${minutes.toString().padStart(2, "0")}:${secondsWithDecimal.padStart(4, "0")}`;
-  };
-
-  // Handle Screen resize
-  useEffect(() => {
-    // Resize event listener
-    const handleResize = () => {
-      setFontSize(timerRef);
-    };
-
-    // Attach event listener
-    window.addEventListener('resize', handleResize);
-    
-    // Set initial font size
-    setFontSize();
-
-    // Cleanup function to remove the event listener
-    return () => {
-      window.removeEventListener('resize', handleResize);
-    };
-    
-  }, []); // Execute only on component mount
-
-  // This is a horrific violation of encapsulation but I am tired of fiddling with the styling
-  const setFontSize = () => {
-    const timerRefWidth = timerRef.current.offsetWidth;
-    const newFontSize = Math.max(0.8 * timerRefWidth/3, 30);
-
-    timerDisplayRef.current.style.fontSize = `${newFontSize}px`;
   };
 
   // Start/Stop Timer Logic
@@ -102,7 +75,11 @@ const Timer = ({initialTime}) => {
   return (
     <div ref={timerRef} onClick={handleTimeClick} className="timer">
      <div ref={flashingRef} className="flashing-mask"></div>
-      <p ref={timerDisplayRef} className="timer-display">{formatTime(time)}</p>
+      <div ref={timerDisplayRef} className="timer-display">
+        <AutoTextSize  maxFontSizePx="300" mode="oneline" style={{margin: "auto"}}>
+          {formatTime(time)}
+        </AutoTextSize>
+      </div>
       <p>Press spacebar to start/stop. Click time to update manually</p>
     </div>
   );

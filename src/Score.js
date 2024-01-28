@@ -1,5 +1,6 @@
-import React, { useRef, useEffect } from 'react';
+import React, { useRef } from 'react';
 import './Score.css';
+import { AutoTextSize } from 'auto-text-size'
 
 const Score = ({ score, scoreName, color, updateScore }) => {
   const scoreRef = useRef();
@@ -12,44 +13,24 @@ const Score = ({ score, scoreName, color, updateScore }) => {
     // paddingSize = "0px"
   }
 
-  // Handle Screen resize
-  useEffect(() => {
-    // Resize event listener
-    const handleResize = () => {
-      setFontSize(scoreRef);
-    };
-
-    // Attach event listener
-    window.addEventListener('resize', handleResize);
-
-    // Cleanup function to remove the event listener
-    return () => {
-      window.removeEventListener('resize', handleResize);
-    };
-  }, []); // Execute only on component mount
-  
-  useEffect(() => {
-    
-    setFontSize();
-  }, [score]);
-  
-  const setFontSize = () => {
-    const scoreboardWidth = scoreRef.current.offsetWidth;
-    const newFontSize = Math.max(0.9 * scoreboardWidth, 40);
-    scoreRef.current.style.fontSize = `${newFontSize}px`;
-    // Adjust button font size based on the score font size
-    const controlButtons = scoreRef.current.querySelectorAll('.score-controls button');
-    controlButtons.forEach(button => {
-      button.style.fontSize = `${newFontSize * 0.2}px`;
-    });
-  };
-
   return (
-    <div ref={scoreRef} className="score" style={{ backgroundColor: color , color: scoreColor, borderWidth: "3px", borderStyle: "solid", borderColor: borderColor, padding: paddingSize}}>
-      <p>{score}</p>
+    <div ref={scoreRef} className="score" style={{ backgroundColor: color , color: scoreColor, borderWidth: "3px", borderStyle: "solid", borderColor: borderColor, padding: paddingSize, alignItems:"center"}}>
+      <div>
+        <AutoTextSize maxFontSizePx="300" mode="box" style={{margin: "auto"}}>
+         {score}
+        </AutoTextSize>
+      </div>
       <div className="score-controls">
-        <button onClick={() => updateScore(scoreName, 1)}>+</button>
-        <button onClick={() => updateScore(scoreName, -1)}>-</button>
+        <button onClick={() => updateScore(scoreName, 1)}>
+          <AutoTextSize maxFontSizePx="200" mode="box" style={{margin: "auto"}}>
+            +
+          </AutoTextSize>
+        </button>
+        <button onClick={() => updateScore(scoreName, -1)}>
+          <AutoTextSize maxFontSizePx="200" mode="box" style={{margin: "auto"}}>
+            -
+          </AutoTextSize>
+        </button>
       </div>
     </div>
   );

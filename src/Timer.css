@@ -7,18 +7,12 @@
   text-align: center;
   margin: 10px;
   border-radius: 10px;
+  width: 100%;
 }
 
-.timer {
-  flex: 1; /* Distribute available space equally */
-  display: flex;
-  flex-direction: column;
-  justify-content: center; /* Center the content horizontally */
-  align-items: center; /* Center the content vertically */
-  text-align: center;
-  margin: 10px;
-  border-radius: 10px;
+.timer-display {
   width: 100%;
+  font-family: monospace;
 }
 
 .flashing-mask {
