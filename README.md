@@ -1,4 +1,10 @@
-# Getting Started with Create React App
+# Falcon Scoreboard
+
+A simple scoreboard, designed for use in wrestling dual tournaments.
+
+First UI project after many years, there are a few ugly perts of the code as a result. AI heavily used to learn framework conventions, so I'll blame the weirdness on the robots :D 
+
+Hosted with onrender: https://falcon-scoreboard.onrender.com/
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
