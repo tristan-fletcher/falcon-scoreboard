@@ -14,7 +14,17 @@
   min-height: 20px;
   border-radius: 50%; /* Round shape */
   border: 1vw solid black; /* Border scales with viewport width */
-  margin: 2vw; /* Space between circles also scales */
+  margin: 0.5vw; /* Space between circles also scales */
+  margin-left: 2vw;
+  margin-right: 2vw;
+}
+
+.circle.small {
+  max-width: 15px; /* You can set a max size if you wish */
+  max-height: 15px;
+  min-width: 10px; /* And a min size */
+  min-height: 10px;
+  border: 0.5vw solid black; /* Border scales with viewport width */
 }
 
 .solid {

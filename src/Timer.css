@@ -14,6 +14,7 @@
 .timer-display {
   width: 100%;
   font-family: monospace;
+  line-height: 0.85;
   cursor: pointer;
 }
 
@@ -31,6 +32,7 @@
 
 .period-container {
   display: flex;
+  flex-direction: column;
 }
 
 .flashing-mask {

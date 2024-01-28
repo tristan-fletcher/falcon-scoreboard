@@ -96,6 +96,7 @@ const Timer = ({initialTime}) => {
       </div>
       <div className="period-container">
         <CircleIndicator ref={circleRef}></CircleIndicator>
+        <CircleIndicator ref={circleRef} firstCircleHollow={true} count={4} size={"small"}></CircleIndicator>
       </div>
       <p className="timer-help">Press spacebar to start/stop. Click time to set time. Click period to change it.</p>
     </div>
