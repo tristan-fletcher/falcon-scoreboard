@@ -2,8 +2,8 @@ import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 import './Mascot.css'; // make sure to create this CSS file
 
-const Mascot = ({ position }) => {
-  const [currentMascotIndex, setCurrentMascotIndex] = useState(0);
+const Mascot = ({ position,  mascotIndex}) => {
+  const [currentMascotIndex, setCurrentMascotIndex] = useState(mascotIndex);
 
   const mascots = [
     '/mascots/falcon-1.jpeg',
@@ -13,7 +13,11 @@ const Mascot = ({ position }) => {
   
   // Function to handle the mascot click, cycling through the mascots array
   const handleMascotClick = () => {
-    setCurrentMascotIndex((prevIndex) => (prevIndex + 1) % mascots.length);
+    setCurrentMascotIndex((prevIndex) => {
+      const newIndex = (prevIndex + 1) % mascots.length;
+      localStorage.setItem('mascot-'+position, newIndex);
+      return newIndex
+    });
   };
 
   // Return the mascot image with dynamic className based on the 'position' prop
@@ -29,8 +33,7 @@ const Mascot = ({ position }) => {
 
 // PropTypes to enforce prop types
 Mascot.propTypes = {
-  position: PropTypes.oneOf(['left', 'right']).isRequired,
-  mascots: PropTypes.arrayOf(PropTypes.string).isRequired,
+  position: PropTypes.oneOf(['topleft', 'topright', 'bottomright', 'bottomleft']).isRequired,
 };
 
 export default Mascot;

@@ -12,14 +12,18 @@ function App() {
   const initialTimeRemaining = localStorage.getItem('timeRemaining') || 120
   console.log("restored scoreboard", savedScoreboard)
   console.log("initial time remaining %d", initialTimeRemaining)
+  const getInitialMascot = (position) => {
+    return localStorage.getItem('mascot-' + position) || 0
+  }
+
 
   return (
     <div className="App">
       <Scoreboard savedScoreboard={savedScoreboard} initialTimeRemaining={initialTimeRemaining}/> {/* Include the Scoreboard component here */}
-      <Mascot position="topleft" />
-      <Mascot position="bottomleft" />
-      <Mascot position="topright"/>
-      <Mascot position="bottomright"/>
+      <Mascot position="topleft" mascotIndex={getInitialMascot("topleft")}/>
+      <Mascot position="bottomleft" mascotIndex={getInitialMascot("bottomleft")} />
+      <Mascot position="topright" mascotIndex={getInitialMascot("topright")}/>
+      <Mascot position="bottomright" mascotIndex={getInitialMascot("bottomright")}/>
     </div>
   );
 }
