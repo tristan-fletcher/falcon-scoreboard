@@ -1,0 +1,39 @@
+.circle-indicator {
+  display: flex;
+  width: 100%;
+  cursor: pointer;
+}
+
+.circle {
+  flex-grow: 1;
+  flex-basis: 0;
+  border-radius: 50%; /* Round shape */
+  border: 2px solid black;
+  margin: 0 10px; /* Space between circles */
+  position: relative;
+}
+
+.circle::before {
+  content: '';
+  display: block;
+  padding-top: 100%; /* Same as width to maintain aspect ratio */
+}
+
+.circle.solid::after, .circle.hollow::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 90%; /* Relative to parent size */
+  height: 90%; /* Relative to parent size */
+  border-radius: 50%; /* Round shape */
+}
+
+.circle.solid::after {
+  background-color: black;
+}
+
+.circle.hollow::after {
+  background-color: white;
+}

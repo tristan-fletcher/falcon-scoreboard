@@ -1,5 +1,6 @@
 import { AutoTextSize } from "auto-text-size";
 import React, { useState, useEffect, useRef } from "react";
+import CircleIndicator from "./CircleIndicator";
 import './Timer.css';
 
 const Timer = ({initialTime}) => {
@@ -73,14 +74,15 @@ const Timer = ({initialTime}) => {
   
 
   return (
-    <div ref={timerRef} onClick={handleTimeClick} className="timer">
+    <div ref={timerRef} className="timer">
      <div ref={flashingRef} className="flashing-mask"></div>
-      <div ref={timerDisplayRef} className="timer-display">
+      <div ref={timerDisplayRef} onClick={handleTimeClick}  className="timer-display">
         <AutoTextSize  maxFontSizePx="300" mode="oneline" style={{margin: "auto"}}>
           {formatTime(time)}
         </AutoTextSize>
       </div>
-      <p>Press spacebar to start/stop. Click time to update manually</p>
+      <p className="timer-help">Press spacebar to start/stop. Click time to set time. Click period to change it.</p>
+      <CircleIndicator></CircleIndicator>
     </div>
   );
 };
