@@ -50,12 +50,12 @@ const Scoreboard = ({savedScoreboard, initialTimeRemaining}) => {
           controlDirection="column"
         />
       </div>
-          <div className="timer-container">
-            <Timer 
-              initialTime={initialTimeRemaining}
-            />
-          </div>
+      <div className="timer-container">
+        <Timer 
+          initialTime={initialTimeRemaining}
+        />
       </div>
+    </div>
   );
 };
 

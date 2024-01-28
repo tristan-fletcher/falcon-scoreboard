@@ -1,6 +1,6 @@
 .timer {
-  flex: 4; 
   display: flex;
+  position: relative;
   flex-direction: column;
   justify-content: center; /* Center the content horizontally */
   align-items: center; /* Center the content vertically */
@@ -17,18 +17,19 @@
 }
 
 .timer-help {
-  display: flex;
-  visibility: hidden;
-  font-size: 12px;
+  display: none;
+  position: absolute;
+  bottom: 0;
+  font-size: 10px;
   font-style: italic;
 }
 
 .timer:hover .timer-help{
-  visibility: visible;
+  display: block;
 }
 
 .period-container {
-  flex: 1;
+  display: flex;
 }
 
 .flashing-mask {
