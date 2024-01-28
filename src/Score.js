@@ -2,7 +2,7 @@ import React, { useRef } from 'react';
 import './Score.css';
 import { AutoTextSize } from 'auto-text-size'
 
-const Score = ({ score, scoreName, color, updateScore }) => {
+const Score = ({ score, scoreName, color, updateScore, controlDirection }) => {
   const scoreRef = useRef();
   let scoreColor = 'white'
   let paddingSize = "3px"
@@ -16,19 +16,29 @@ const Score = ({ score, scoreName, color, updateScore }) => {
   return (
     <div ref={scoreRef} className="score" style={{ backgroundColor: color , color: scoreColor, borderWidth: "3px", borderStyle: "solid", borderColor: borderColor, padding: paddingSize, alignItems:"center"}}>
       <div>
-        <AutoTextSize maxFontSizePx="300" mode="box" style={{margin: "auto"}}>
+        <AutoTextSize maxFontSizePx="500" mode="box" style={{margin: "auto"}}>
          {score}
         </AutoTextSize>
       </div>
-      <div className="score-controls">
-        <button onClick={() => updateScore(scoreName, 1)}>
-          <AutoTextSize maxFontSizePx="200" mode="box" style={{margin: "auto"}}>
-            +
+      <div className="score-controls" style={{flexDirection: controlDirection}}>
+        <button onClick={() => updateScore(scoreName, 2)}>
+          <AutoTextSize maxFontSizePx="100" mode="oneline" style={{margin: "auto"}}>
+            +2
           </AutoTextSize>
         </button>
         <button onClick={() => updateScore(scoreName, -1)}>
-          <AutoTextSize maxFontSizePx="200" mode="box" style={{margin: "auto"}}>
-            -
+          <AutoTextSize maxFontSizePx="100" mode="oneline" style={{margin: "auto"}}>
+            +1
+          </AutoTextSize>
+        </button>
+        <button onClick={() => updateScore(scoreName, -1)}>
+          <AutoTextSize maxFontSizePx="100" mode="oneline" style={{margin: "auto"}}>
+            -1
+          </AutoTextSize>
+        </button>
+        <button onClick={() => updateScore(scoreName, -2)}>
+          <AutoTextSize maxFontSizePx="100" mode="oneline" style={{margin: "auto"}}>
+            -2
           </AutoTextSize>
         </button>
       </div>

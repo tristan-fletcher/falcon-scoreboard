@@ -25,6 +25,7 @@ const Scoreboard = ({savedScoreboard, initialTimeRemaining}) => {
         scoreName="greenScore"
         color="green"
         updateScore={updateScore}
+        controlDirection="column"
       />
       <div className="center-container">
         <div className="team-scores-container">
@@ -52,6 +53,7 @@ const Scoreboard = ({savedScoreboard, initialTimeRemaining}) => {
         scoreName="redScore"
         color="red"
         updateScore={updateScore}
+        controlDirection="column"
       />
     </div>
   );
