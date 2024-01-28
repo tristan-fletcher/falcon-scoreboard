@@ -10,24 +10,24 @@
 
 .mascot.bottomleft {
   bottom: 18px; /* Adjust spacing from the bottom as needed */
-  max-width: 250px; /* Force all images to the same width */
+  max-width: 15vw; /* Force all images to the same width */
   left: 20px; /* Adjust spacing from the left as needed */
 }
 
 .mascot.bottomright {
   bottom: 18px; /* Adjust spacing from the bottom as needed */
-  max-width: 250px; /* Force all images to the same width */
+  max-width: 15vw; /* Force all images to the same width */
   right: 20px; /* Adjust spacing from the right as needed */
 }
 
 .mascot.topleft {
   top: 18px; /* Adjust spacing from the bottom as needed */
-  max-width: 100px; /* Force all images to the same width */
+  max-width: 7vw; /* Force all images to the same width */
   left: 20px; /* Adjust spacing from the left as needed */
 }
 
 .mascot.topright {
   top: 18px; /* Adjust spacing from the bottom as needed */
-  max-width: 100px; /* Force all images to the same width */
+  max-width: 7vw; /* Force all images to the same width */
   right: 20px; /* Adjust spacing from the right as needed */
 }

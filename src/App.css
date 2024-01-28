@@ -1,5 +1,11 @@
 .App {
   text-align: center;
+  /* background-color: purple;
+  background-image: linear-gradient(
+    135deg,
+    rgba(240, 240, 240, 0.17) 0%, 
+    rgba(255, 255, 255, 0.975) 100%
+  ); */
 }
 
 .App-logo {

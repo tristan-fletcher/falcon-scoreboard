@@ -23,7 +23,7 @@ const Score = ({ score, scoreName, color, updateScore, controlDirection, invertC
   }
   if (invertColor) {
     backgroundColor = convertToRGBA(color)
-    opacity = '75%'
+    opacity = '100%'
     scoreColor = 'white'
     borderColor = color
     boxShadow = ""
