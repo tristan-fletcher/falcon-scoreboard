@@ -29,17 +29,19 @@
   flex-direction: row;
   position: absolute; /* Position absolutely within the score div */
   bottom: 0; /* Align to the bottom of the score div */
-  width: 100%; /* Fill the entire width of the score div */
-  height: 100%; /* Initially have zero height */
   background: rgba(0, 0, 0, 0.5); /* Semi-transparent background */
   transition: height 0.3s; /* Add smooth transition effect */
 }
 
 .score-controls div, button {
   cursor: pointer;
+  font-size: inherit;
 }
 
 .score:hover .score-controls {
+  display: flex;
+}
+.score-controls:hover {
   display: flex;
 }
 
